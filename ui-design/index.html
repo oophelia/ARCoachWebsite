@@ -3,9 +3,9 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>Database</title>
+		<title>UI Design</title>
 		<link rel="alternate" type="application/rss+xml" title="RSS" href="https://i.cs.hku.hk/~msp19047/index.xml">
-		<link rel="canonical" href="https://i.cs.hku.hk/~msp19047/database/">
+		<link rel="canonical" href="https://i.cs.hku.hk/~msp19047/ui-design/">
 		
 		<link rel="shortcut icon" type="image/png" href="https://i.cs.hku.hk/~msp19047/apple-touch-icon-precomposed.png">
 		
@@ -13,12 +13,12 @@
 		<meta name="generator" content="Hugo 0.72.0" />
 
 		
-		<meta property="og:title" content="Database" />
+		<meta property="og:title" content="UI Design" />
 		<meta property="og:type" content="article" />
-		<meta property="og:image" content="https://i.cs.hku.hk/~msp19047/img/Firebase_banner.jpg" />
+		<meta property="og:image" content="https://i.cs.hku.hk/~msp19047/img/UIDesign_banner.jpg" />
 		<meta property="og:description" content="" />
-		<meta property="og:url" content="https://i.cs.hku.hk/~msp19047/database/" />
-		<meta property="og:site_name" content="Database" />
+		<meta property="og:url" content="https://i.cs.hku.hk/~msp19047/ui-design/" />
+		<meta property="og:site_name" content="UI Design" />
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:site" content="@" />
 
@@ -39,7 +39,7 @@
 	</head>
 	<body class="ma0 bg-white  page-kind-page is-page-true  feature-figcaption feature-figcaption-hidden feature-figlink feature-fignum feature-tablecaption">
 		
-		<header class="cover bg-top" style="background-image: url('https://i.cs.hku.hk/~msp19047/img/Firebase_banner.jpg'); background-position: center;">
+		<header class="cover bg-top" style="background-image: url('https://i.cs.hku.hk/~msp19047/img/UIDesign_banner.jpg'); background-position: center;">
 			<div class="bg-black-30 bb bt">
 
 				<nav class="hide-print sans-serif  border-box pa3 ph5-l">
@@ -53,16 +53,16 @@
 				</nav>
 
 				<div id="hdr" class="tc-l pv4-ns pv5-l pv2 ph3 ph4-ns">
-					<h1 class="near-white mt1-ns f2 fw3 mb0 mt0 lh-title">Database</h1>
+					<h1 class="near-white mt1-ns f2 fw3 mb0 mt0 lh-title">UI Design</h1>
 					<h2 class="near-white mt3-l mb4-l fw1 f6 f3-l measure-wide-l center lh-copy mt2 mb3">
 						
 						
 							
 								Published
-								<time datetime="2020-06-10T00:00:00Z">Jun 10, 2020</time>
+								<time datetime="2020-06-11T00:00:00Z">Jun 11, 2020</time>
 								<span class="display-print">by </span>
 								
-								<span class="display-print">at https://i.cs.hku.hk/~msp19047/database/</span>
+								<span class="display-print">at https://i.cs.hku.hk/~msp19047/ui-design/</span>
 							
 						
 					</h2>
@@ -79,16 +79,17 @@
 		<main role="main">
 		
 <article class="center bg-white br-3 pv1 ph4 lh-copy f5 nested-links mw7">
-	<p>ARCoach uses Firebase as authentication and database. User registers in ARCoach and ARCoach would send the user’s email and password to Firebase and get a complicated UID in return. The user’s information would be uploaded into Firebase realtime database under the root of the user’s UID. The free version of Firebase supports up to 100 connections simultaneously.</p>
-<p><img src="../img/Architecture.png" alt="Architecture">
-<em>Architecture of ARCoach</em></p>
-<p>The authentication in Firebase is shown below. It includes an email address as an ID and an auto-generated UID.</p>
-<p><img src="../img/Firebase_Authentication.png" alt="Firebase Authentication">
-<em>Firebase Authentication</em></p>
-<p>The user’s information is stored under the root of the corresponding UID. For example, under the UID tLo3EXZPbXea6I69kuXbq5WQI873, there are two nodes named profile and profilePicture. Profile node saves basic information such as age, email, gender, height, weight, and name. ProfilePicture node saves the URL of the profile picture which is stored in Firebase Storage.</p>
-<p><img src="../img/Firebase_Realtime_Database.png" alt="Firebase Realtime  Database">
-<em>Firebase Realtime Database</em></p>
-<p>Read next: <a href="/~msp19047/ui-design">UI Design</a>.</p>
+	<p>The Login, Register, and Edit Profile page are shown below. Registration requires name, password, gender, age, weight, height, and email. Login asks for a valid registered email and the correct password. In the Edit Profile page, users are allowed to edit all information except for email. Users can upload a picture from iPhone’s gallery or take a picture as their profile pictures.</p>
+<p><img src="../img/RegisterPage.png" alt="Login, Register, and Edit Profile page">
+<em>Login, Register, and Edit Profile page</em></p>
+<p>ARCoach can be divided into 4 major parts, namely Activity, Plan, Workouts, and Me. Below are the screenshots of each tab bar page.</p>
+<p><img src="../img/MainPage.png" alt="Activity, Plan, Workouts, and Me page">
+<em>Activity, Plan, Workouts, and Me page</em></p>
+<p>In the Activity page, ARCoach would access health data from iPhone through HealthKit and display them. It also would grab history data of training minutes and training days from Firebase.</p>
+<p>In the Plan page, JTAppleCalendar is displayed. It can be scrolled to select the date. In the future, ARCoach would link the date and training plan together​(TO-DO)​.</p>
+<p>In the Activity page, instead of just playing a video that instructs users how to do the exercise, ARCoach would combine AR and VR technology, analyze the motion based on motion tracking results in order to give feedback to users. The algorithm would make use of important joints of the body, such as right hand, right shoulder, head, hip, right foot joints. By analyzing the relationship between the joints, to determine whether the users have done the workouts correctly​(TO-DO)​.</p>
+<p>In the Me page, it records the personal information related to sport and display the profile picture and user’s name. The setting button on the top right would direct the user to the Edit Profile page.</p>
+<p>Read next: <a href="/theme-features">Story&rsquo;s features</a>.</p>
 
 </article>
 

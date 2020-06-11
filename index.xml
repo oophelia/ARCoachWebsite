@@ -9,14 +9,22 @@
 		<updated>0001-01-01 00:00:00 &#43;0000 UTC</updated>
 		
 		<item>
-			<title>About ARCoach</title>
-			<link>https://i.cs.hku.hk/~msp19047/about-arcoach/</link>
+			<title>UI Design</title>
+			<link>https://i.cs.hku.hk/~msp19047/ui-design/</link>
 			<pubDate>Thu, 11 Jun 2020 00:00:00 UTC</pubDate>
 			<author></author>
-			<guid>https://i.cs.hku.hk/~msp19047/about-arcoach/</guid>
-			<media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://i.cs.hku.hk/~msp19047/img/ARCoach.png" medium="image" type="image/jpg" width="100" height="100" />
-			<description>&lt;p&gt;This project aims to develop an iOS application ARCoach for giving instant fitness instructions and feedbacks armed with body motion tracking through the iPhone’s camera, providing exercises with virtual objects using immersive technology Augmented Reality(AR). It helps users to do exercises correctly at home without hiring a coach or buying extra wearable devices, meanwhile enjoy the immersive experience brought by AR.&lt;/p&gt;
-&lt;p&gt;Unlike some fitness applications that need input data from a wearable device, ARCoach uses the camera of iPhone to track body motion and extract movement information, users, therefore, need not buy an extra wearable device for fitness. Besides, ARCoach takes advantage of the powerful ARKit Framework of iOS and corresponding Apple device’s support, thus it improves interaction and creates a virtually fun environment for users. ARCoach gives instructions of indoor exercise includes Lunges, Crunch, Push up, Sit up and Squat, it tracks movements of users in real-time and produces a 3D skeleton. It analyses the data of 3D skeleton joints, compares with the recordings data from the professional coaches in order to give instructions.&lt;/p&gt;
+			<guid>https://i.cs.hku.hk/~msp19047/ui-design/</guid>
+			<media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://i.cs.hku.hk/~msp19047/img/UIDesign.jpg" medium="image" type="image/jpg" width="100" height="100" />
+			<description>&lt;p&gt;The Login, Register, and Edit Profile page are shown below. Registration requires name, password, gender, age, weight, height, and email. Login asks for a valid registered email and the correct password. In the Edit Profile page, users are allowed to edit all information except for email. Users can upload a picture from iPhone’s gallery or take a picture as their profile pictures.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../img/RegisterPage.png&#34; alt=&#34;Login, Register, and Edit Profile page&#34;&gt;
+&lt;em&gt;Login, Register, and Edit Profile page&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;ARCoach can be divided into 4 major parts, namely Activity, Plan, Workouts, and Me. Below are the screenshots of each tab bar page.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../img/MainPage.png&#34; alt=&#34;Activity, Plan, Workouts, and Me page&#34;&gt;
+&lt;em&gt;Activity, Plan, Workouts, and Me page&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;In the Activity page, ARCoach would access health data from iPhone through HealthKit and display them. It also would grab history data of training minutes and training days from Firebase.&lt;/p&gt;
+&lt;p&gt;In the Plan page, JTAppleCalendar is displayed. It can be scrolled to select the date. In the future, ARCoach would link the date and training plan together​(TO-DO)​.&lt;/p&gt;
+&lt;p&gt;In the Activity page, instead of just playing a video that instructs users how to do the exercise, ARCoach would combine AR and VR technology, analyze the motion based on motion tracking results in order to give feedback to users. The algorithm would make use of important joints of the body, such as right hand, right shoulder, head, hip, right foot joints. By analyzing the relationship between the joints, to determine whether the users have done the workouts correctly​(TO-DO)​.&lt;/p&gt;
+&lt;p&gt;In the Me page, it records the personal information related to sport and display the profile picture and user’s name. The setting button on the top right would direct the user to the Edit Profile page.&lt;/p&gt;
 &lt;p&gt;Read next: &lt;a href=&#34;https://i.cs.hku.hk/~msp19047/theme-features&#34;&gt;Story&amp;rsquo;s features&lt;/a&gt;.&lt;/p&gt;
 </description>
 		</item>
@@ -24,14 +32,33 @@
 		<item>
 			<title>Database</title>
 			<link>https://i.cs.hku.hk/~msp19047/database/</link>
-			<pubDate>Thu, 11 Jun 2020 00:00:00 UTC</pubDate>
+			<pubDate>Wed, 10 Jun 2020 00:00:00 UTC</pubDate>
 			<author></author>
 			<guid>https://i.cs.hku.hk/~msp19047/database/</guid>
-			<media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://i.cs.hku.hk/~msp19047/img/Firebase.jpeg" medium="image" type="image/jpg" width="100" height="100" />
+			<media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://i.cs.hku.hk/~msp19047/img/Firebase.png" medium="image" type="image/jpg" width="100" height="100" />
 			<description>&lt;p&gt;ARCoach uses Firebase as authentication and database. User registers in ARCoach and ARCoach would send the user’s email and password to Firebase and get a complicated UID in return. The user’s information would be uploaded into Firebase realtime database under the root of the user’s UID. The free version of Firebase supports up to 100 connections simultaneously.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;img/Firebase.jpeg&#34; alt=&#34;figure&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../img/Architecture.png&#34; alt=&#34;Architecture&#34;&gt;
+&lt;em&gt;Architecture of ARCoach&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;The authentication in Firebase is shown below. It includes an email address as an ID and an auto-generated UID.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../img/Firebase_Authentication.png&#34; alt=&#34;Firebase Authentication&#34;&gt;
+&lt;em&gt;Firebase Authentication&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;The user’s information is stored under the root of the corresponding UID. For example, under the UID tLo3EXZPbXea6I69kuXbq5WQI873, there are two nodes named profile and profilePicture. Profile node saves basic information such as age, email, gender, height, weight, and name. ProfilePicture node saves the URL of the profile picture which is stored in Firebase Storage.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../img/Firebase_Realtime_Database.png&#34; alt=&#34;Firebase Realtime  Database&#34;&gt;
+&lt;em&gt;Firebase Realtime Database&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Read next: &lt;a href=&#34;https://i.cs.hku.hk/~msp19047/~msp19047/ui-design&#34;&gt;UI Design&lt;/a&gt;.&lt;/p&gt;
+</description>
+		</item>
+		
+		<item>
+			<title>About ARCoach</title>
+			<link>https://i.cs.hku.hk/~msp19047/about-arcoach/</link>
+			<pubDate>Tue, 09 Jun 2020 00:00:00 UTC</pubDate>
+			<author></author>
+			<guid>https://i.cs.hku.hk/~msp19047/about-arcoach/</guid>
+			<media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://i.cs.hku.hk/~msp19047/img/ARCoach.png" medium="image" type="image/jpg" width="100" height="100" />
+			<description>&lt;p&gt;This project aims to develop an iOS application ARCoach for giving instant fitness instructions and feedbacks armed with body motion tracking through the iPhone’s camera, providing exercises with virtual objects using immersive technology Augmented Reality(AR). It helps users to do exercises correctly at home without hiring a coach or buying extra wearable devices, meanwhile enjoy the immersive experience brought by AR.&lt;/p&gt;
 &lt;p&gt;Unlike some fitness applications that need input data from a wearable device, ARCoach uses the camera of iPhone to track body motion and extract movement information, users, therefore, need not buy an extra wearable device for fitness. Besides, ARCoach takes advantage of the powerful ARKit Framework of iOS and corresponding Apple device’s support, thus it improves interaction and creates a virtually fun environment for users. ARCoach gives instructions of indoor exercise includes Lunges, Crunch, Push up, Sit up and Squat, it tracks movements of users in real-time and produces a 3D skeleton. It analyses the data of 3D skeleton joints, compares with the recordings data from the professional coaches in order to give instructions.&lt;/p&gt;
-&lt;p&gt;Read next: &lt;a href=&#34;https://i.cs.hku.hk/~msp19047/theme-features&#34;&gt;Story&amp;rsquo;s features&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Read next: &lt;a href=&#34;https://i.cs.hku.hk/~msp19047/~msp19047/database&#34;&gt;Database&lt;/a&gt;.&lt;/p&gt;
 </description>
 		</item>
 		
