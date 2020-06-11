@@ -1,0 +1,39 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>ARCoach </title>
+		<link>https://i.cs.hku.hk/~msp19047/</link>
+		<generator>Hugo -- gohugo.io</generator>
+		<language>en-us</language>
+		<author></author>
+		<rights>Copyright (c) 1</rights>
+		<updated>0001-01-01 00:00:00 &#43;0000 UTC</updated>
+		
+		<item>
+			<title>About ARCoach</title>
+			<link>https://i.cs.hku.hk/~msp19047/about-arcoach/</link>
+			<pubDate>Thu, 11 Jun 2020 00:00:00 UTC</pubDate>
+			<author></author>
+			<guid>https://i.cs.hku.hk/~msp19047/about-arcoach/</guid>
+			<media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://i.cs.hku.hk/~msp19047/img/ARCoach.png" medium="image" type="image/jpg" width="100" height="100" />
+			<description>&lt;p&gt;This project aims to develop an iOS application ARCoach for giving instant fitness instructions and feedbacks armed with body motion tracking through the iPhone’s camera, providing exercises with virtual objects using immersive technology Augmented Reality(AR). It helps users to do exercises correctly at home without hiring a coach or buying extra wearable devices, meanwhile enjoy the immersive experience brought by AR.&lt;/p&gt;
+&lt;p&gt;Unlike some fitness applications that need input data from a wearable device, ARCoach uses the camera of iPhone to track body motion and extract movement information, users, therefore, need not buy an extra wearable device for fitness. Besides, ARCoach takes advantage of the powerful ARKit Framework of iOS and corresponding Apple device’s support, thus it improves interaction and creates a virtually fun environment for users. ARCoach gives instructions of indoor exercise includes Lunges, Crunch, Push up, Sit up and Squat, it tracks movements of users in real-time and produces a 3D skeleton. It analyses the data of 3D skeleton joints, compares with the recordings data from the professional coaches in order to give instructions.&lt;/p&gt;
+&lt;p&gt;Read next: &lt;a href=&#34;https://i.cs.hku.hk/~msp19047/theme-features&#34;&gt;Story&amp;rsquo;s features&lt;/a&gt;.&lt;/p&gt;
+</description>
+		</item>
+		
+		<item>
+			<title>Database</title>
+			<link>https://i.cs.hku.hk/~msp19047/database/</link>
+			<pubDate>Thu, 11 Jun 2020 00:00:00 UTC</pubDate>
+			<author></author>
+			<guid>https://i.cs.hku.hk/~msp19047/database/</guid>
+			<media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://i.cs.hku.hk/~msp19047/img/Firebase.jpeg" medium="image" type="image/jpg" width="100" height="100" />
+			<description>&lt;p&gt;ARCoach uses Firebase as authentication and database. User registers in ARCoach and ARCoach would send the user’s email and password to Firebase and get a complicated UID in return. The user’s information would be uploaded into Firebase realtime database under the root of the user’s UID. The free version of Firebase supports up to 100 connections simultaneously.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/Firebase.jpeg&#34; alt=&#34;figure&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Unlike some fitness applications that need input data from a wearable device, ARCoach uses the camera of iPhone to track body motion and extract movement information, users, therefore, need not buy an extra wearable device for fitness. Besides, ARCoach takes advantage of the powerful ARKit Framework of iOS and corresponding Apple device’s support, thus it improves interaction and creates a virtually fun environment for users. ARCoach gives instructions of indoor exercise includes Lunges, Crunch, Push up, Sit up and Squat, it tracks movements of users in real-time and produces a 3D skeleton. It analyses the data of 3D skeleton joints, compares with the recordings data from the professional coaches in order to give instructions.&lt;/p&gt;
+&lt;p&gt;Read next: &lt;a href=&#34;https://i.cs.hku.hk/~msp19047/theme-features&#34;&gt;Story&amp;rsquo;s features&lt;/a&gt;.&lt;/p&gt;
+</description>
+		</item>
+		
+	</channel>
+</rss>
