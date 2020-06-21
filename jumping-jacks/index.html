@@ -3,9 +3,9 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>UI Design</title>
+		<title>Jumping Jacks Detection</title>
 		<link rel="alternate" type="application/rss+xml" title="RSS" href="https://i.cs.hku.hk/~msp19047/index.xml">
-		<link rel="canonical" href="https://i.cs.hku.hk/~msp19047/ui-design/">
+		<link rel="canonical" href="https://i.cs.hku.hk/~msp19047/jumping-jacks/">
 		
 		<link rel="shortcut icon" type="image/png" href="https://i.cs.hku.hk/~msp19047/apple-touch-icon-precomposed.png">
 		
@@ -13,12 +13,12 @@
 		<meta name="generator" content="Hugo 0.72.0" />
 
 		
-		<meta property="og:title" content="UI Design" />
+		<meta property="og:title" content="Jumping Jacks Detection" />
 		<meta property="og:type" content="article" />
-		<meta property="og:image" content="https://i.cs.hku.hk/~msp19047/img/UIDesign_banner.jpg" />
+		<meta property="og:image" content="https://i.cs.hku.hk/~msp19047/img/JumpingJacks.png" />
 		<meta property="og:description" content="" />
-		<meta property="og:url" content="https://i.cs.hku.hk/~msp19047/ui-design/" />
-		<meta property="og:site_name" content="UI Design" />
+		<meta property="og:url" content="https://i.cs.hku.hk/~msp19047/jumping-jacks/" />
+		<meta property="og:site_name" content="Jumping Jacks Detection" />
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:site" content="@" />
 
@@ -39,7 +39,7 @@
 	</head>
 	<body class="ma0 bg-white  page-kind-page is-page-true  feature-figcaption feature-figcaption-hidden feature-figlink feature-fignum feature-tablecaption">
 		
-		<header class="cover bg-top" style="background-image: url('https://i.cs.hku.hk/~msp19047/img/UIDesign_banner.jpg'); background-position: center;">
+		<header class="cover bg-top" style="background-image: url('https://i.cs.hku.hk/~msp19047/img/JumpingJacks.png'); background-position: center;">
 			<div class="bg-black-30 bb bt">
 
 				<nav class="hide-print sans-serif  border-box pa3 ph5-l">
@@ -53,16 +53,16 @@
 				</nav>
 
 				<div id="hdr" class="tc-l pv4-ns pv5-l pv2 ph3 ph4-ns">
-					<h1 class="near-white mt1-ns f2 fw3 mb0 mt0 lh-title">UI Design</h1>
+					<h1 class="near-white mt1-ns f2 fw3 mb0 mt0 lh-title">Jumping Jacks Detection</h1>
 					<h2 class="near-white mt3-l mb4-l fw1 f6 f3-l measure-wide-l center lh-copy mt2 mb3">
 						
 						
 							
 								Published
-								<time datetime="2020-06-11T00:00:00Z">Jun 11, 2020</time>
+								<time datetime="2020-06-17T00:00:00Z">Jun 17, 2020</time>
 								<span class="display-print">by </span>
 								
-								<span class="display-print">at https://i.cs.hku.hk/~msp19047/ui-design/</span>
+								<span class="display-print">at https://i.cs.hku.hk/~msp19047/jumping-jacks/</span>
 							
 						
 					</h2>
@@ -79,17 +79,19 @@
 		<main role="main">
 		
 <article class="center bg-white br-3 pv1 ph4 lh-copy f5 nested-links mw7">
-	<p>The Login, Register, and Edit Profile page are shown below. Registration requires name, password, gender, age, weight, height, and email. Login asks for a valid registered email and the correct password. In the Edit Profile page, users are allowed to edit all information except for email. Users can upload a picture from iPhone’s gallery or take a picture as their profile pictures.</p>
-<p><img src="../img/RegisterPage.png" alt="Login, Register, and Edit Profile page">
-<em>Login, Register, and Edit Profile page</em></p>
-<p>ARCoach can be divided into 4 major parts, namely Activity, Plan, Workouts, and Me. Below are the screenshots of each tab bar page.</p>
-<p><img src="../img/MainPage.png" alt="Activity, Plan, Workouts, and Me page">
-<em>Activity, Plan, Workouts, and Me page</em></p>
-<p>In the Activity page, ARCoach would access health data from iPhone through HealthKit and display them. It also would grab history data of training minutes and training days from Firebase.</p>
-<p>In the Plan page, JTAppleCalendar is displayed. It can be scrolled to select the date. In the future, ARCoach would link the date and training plan together​(TO-DO)​.</p>
-<p>In the Activity page, instead of just playing a video that instructs users how to do the exercise, ARCoach would combine AR and VR technology, analyze the motion based on motion tracking results in order to give feedback to users. The algorithm would make use of important joints of the body, such as right hand, right shoulder, head, hip, right foot joints. By analyzing the relationship between the joints, to determine whether the users have done the workouts correctly​(TO-DO)​.</p>
-<p>In the Me page, it records the personal information related to sport and display the profile picture and user’s name. The setting button on the top right would direct the user to the Edit Profile page.</p>
-<p>Read next: <a href="/~msp19047/jumping-jacks">JumpingJacks Detection</a>.</p>
+	<p>ARKit framework provides the captured skeleton of a person from iPhone&rsquo;s back camera in real-time. Detailed three-dimensional joint data can be extracted from the skeleton such as the distance of Right Hand Joint with respect to Root / Hip Joint. Below are the skeleton and some of the joints.</p>
+<p><img src="../img/Skeleton.png" alt="skeleton">
+<em>skeleton</em></p>
+<p>ARKit uses a right-handed coordinate system where the direction of view is along the negative Z-axis, as illustrated below.</p>
+<p><img src="../img/Coordinate.png" alt="coordinate">
+<em>coordinate</em></p>
+<p>In order to explore the pattern of jumping jacks, a video of a professional coach doing jumping jacks is fed into the ARKit framework. As a simple start, 6 kinds of data are chosen where LHX means &ldquo;Left-Hand joint data on X-axis&rdquo; etc. From the data, it can be concluded that a jumping jack has a certain pattern and the absolute value of two hands or feet are almost identical in the same direction. If the minimum of RHY and LHY are regarded as a beginning of jumping jacks, the next appearance of minimum stands for the ending of jumping jacks roughly. In this way, the algorithm detects the minimum and maximum, combines the joint data of the left/right hand/foot to create a threshold. If the derived condition is satisfied, the count label would increase by one.</p>
+<p><img src="../img/JumpingJacksData.png" alt="jumpingJacksData">
+<em>jumpingJacksData</em></p>
+<p>The time and count would be frozen when the pause button is pressed and would be unfrozen when the resume button is pressed. The stop button would save and upload this training record into the cloud database and then return to the Workout Page. Below is the screenshot of the Jumping Jacks Detection Page.</p>
+<p><img src="../img/JumpingJacksScreenshot.png" alt="JumpingJacksScreenshot">
+<em>JumpingJacksScreenshot</em></p>
+<p>Read next: <a href="/~msp19047/jumping-jacks">Jumping Jacks Detection</a>.</p>
 
 </article>
 
