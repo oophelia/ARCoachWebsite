@@ -9,6 +9,39 @@
 		<updated>0001-01-01 00:00:00 &#43;0000 UTC</updated>
 		
 		<item>
+			<title>Quantification of Performance</title>
+			<link>https://i.cs.hku.hk/~msp19047/performance/</link>
+			<pubDate>Wed, 24 Jun 2020 00:00:00 UTC</pubDate>
+			<author></author>
+			<guid>https://i.cs.hku.hk/~msp19047/performance/</guid>
+			<media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://i.cs.hku.hk/~msp19047/img/Performance.png" medium="image" type="image/jpg" width="100" height="100" />
+			<description>&lt;p&gt;ARCoach gives the users feedback about the exercise through hints and a performance score. The judgment of the performance score should be related to the professional coaches&amp;rsquo; corresponding exercise. ARCoach borrows the idea from MSE (mean square error).&lt;/p&gt;
+&lt;p&gt;Take jumping jacks as an example. ARCoach judges the performance by MSE value, more close MSE is to 0, more accurate the exercise.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../img/MSE.png&#34; alt=&#34;MSE&#34;&gt;
+&lt;em&gt;MSE&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../img/Performance.png&#34; alt=&#34;Quantification of Performance&#34;&gt;
+&lt;em&gt;Quantification of Performance&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Read next: &lt;a href=&#34;https://i.cs.hku.hk/~msp19047/~msp19047/calendar&#34;&gt;Calendar&lt;/a&gt;.&lt;/p&gt;
+</description>
+		</item>
+		
+		<item>
+			<title>Squats Detection</title>
+			<link>https://i.cs.hku.hk/~msp19047/squats/</link>
+			<pubDate>Wed, 24 Jun 2020 00:00:00 UTC</pubDate>
+			<author></author>
+			<guid>https://i.cs.hku.hk/~msp19047/squats/</guid>
+			<media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://i.cs.hku.hk/~msp19047/img/Squats.png" medium="image" type="image/jpg" width="100" height="100" />
+			<description>&lt;p&gt;It can be concluded that the position between the user and iPhone would affect the joint data of Squats from the below figure. Considered that part of the joint data is heavily impacted by the position, the algorithm should choose the joint data which has a clear &amp;ldquo;wave pattern&amp;rdquo; to determine a valid exercise count accurately. ARCoach chooses the hand joints and foot joints on axis-Y to detect a valid count, plus hand joints and foot joints on axis-Z to calculate the performance score of Squat workout.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../img/Position.png&#34; alt=&#34;Position&#34;&gt;
+&lt;em&gt;Different position between the user and iPhone&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;The absolute values of two hands or feet are almost identical in the same direction. If the maximum of RHY(where RHY means “Right-Hand joint data on Y-axis” etc) and LHY together with a maximum of RFY and LFY are regarded as a beginning of squats, the next appearance of these combinations roughly stands for the ending of squats.&lt;/p&gt;
+&lt;p&gt;If certain interval elapses and there is no sign of iconic extremum, it means that the hip is not qualified in the height standards, the hint logically should be “squat lower” then restart the count down timer.&lt;/p&gt;
+&lt;p&gt;Read next: &lt;a href=&#34;https://i.cs.hku.hk/~msp19047/~msp19047/performance&#34;&gt;Quantification of Performance&lt;/a&gt;.&lt;/p&gt;
+</description>
+		</item>
+		
+		<item>
 			<title>Jumping Jacks Detection</title>
 			<link>https://i.cs.hku.hk/~msp19047/jumping-jacks/</link>
 			<pubDate>Wed, 17 Jun 2020 00:00:00 UTC</pubDate>
@@ -21,13 +54,16 @@
 &lt;p&gt;ARKit uses a right-handed coordinate system where the direction of view is along the negative Z-axis, as illustrated below.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../img/Coordinate.png&#34; alt=&#34;coordinate&#34;&gt;
 &lt;em&gt;coordinate&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;In order to explore the pattern of jumping jacks, a video of a professional coach doing jumping jacks is fed into the ARKit framework. As a simple start, 6 kinds of data are chosen where LHX means &amp;ldquo;Left-Hand joint data on X-axis&amp;rdquo; etc. From the data, it can be concluded that a jumping jack has a certain pattern and the absolute value of two hands or feet are almost identical in the same direction. If the minimum of RHY and LHY are regarded as a beginning of jumping jacks, the next appearance of minimum stands for the ending of jumping jacks roughly. In this way, the algorithm detects the minimum and maximum, combines the joint data of the left/right hand/foot to create a threshold. If the derived condition is satisfied, the count label would increase by one.&lt;/p&gt;
+&lt;p&gt;In order to explore the pattern of jumping jacks, a video of a professional coach doing jumping jacks is fed into the ARKit framework. As a simple start, 6 kinds of data are chosen where LHX means &amp;ldquo;Left-Hand joint data on X-axis&amp;rdquo; etc. From the data, it can be concluded that a jumping jack has a certain pattern and the absolute value of two hands are almost identical in the same direction. If the minimum of RHY and LHY are regarded as a beginning of jumping jacks, the next appearance of minimum roughly stands for the ending of jumping jacks. In this way, the algorithm detects the minimum and maximum, combines the joint data of the left/right hand on X-axis and Y-axis to create a threshold. If the derived condition is satisfied, lead to a valid count of exercise the count label would increase by one. The above solution can recognize the same exercise at varying pace.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../img/JumpingJacksData.png&#34; alt=&#34;jumpingJacksData&#34;&gt;
 &lt;em&gt;jumpingJacksData&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;The time and count would be frozen when the pause button is pressed and would be unfrozen when the resume button is pressed. The stop button would save and upload this training record into the cloud database and then return to the Workout Page. Below is the screenshot of the Jumping Jacks Detection Page.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../img/JumpingJacksScreenshot.png&#34; alt=&#34;JumpingJacksScreenshot&#34;&gt;
 &lt;em&gt;JumpingJacksScreenshot&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Read next: &lt;a href=&#34;https://i.cs.hku.hk/~msp19047/~msp19047/jumping-jacks&#34;&gt;Jumping Jacks Detection&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;One of the unique features of ARCoach is instant fitness instructions. When to raise a hint and what the content of a hint becoming an important issue during the exercise time. The basic idea is to detect the beginning of jumping jacks, the timer starts the count down. If certain interval elapses and there is no sign of iconic extremum, it means that the arms are not qualified in the height standards, the hint logically should be &amp;ldquo;raise arms higher&amp;rdquo; then restart the count down timer.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../img/Hint.png&#34; alt=&#34;Hint&#34;&gt;
+&lt;em&gt;Hint&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Read next: &lt;a href=&#34;https://i.cs.hku.hk/~msp19047/~msp19047/squats&#34;&gt;Squats Detection&lt;/a&gt;.&lt;/p&gt;
 </description>
 		</item>
 		

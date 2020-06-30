@@ -85,13 +85,16 @@
 <p>ARKit uses a right-handed coordinate system where the direction of view is along the negative Z-axis, as illustrated below.</p>
 <p><img src="../img/Coordinate.png" alt="coordinate">
 <em>coordinate</em></p>
-<p>In order to explore the pattern of jumping jacks, a video of a professional coach doing jumping jacks is fed into the ARKit framework. As a simple start, 6 kinds of data are chosen where LHX means &ldquo;Left-Hand joint data on X-axis&rdquo; etc. From the data, it can be concluded that a jumping jack has a certain pattern and the absolute value of two hands or feet are almost identical in the same direction. If the minimum of RHY and LHY are regarded as a beginning of jumping jacks, the next appearance of minimum stands for the ending of jumping jacks roughly. In this way, the algorithm detects the minimum and maximum, combines the joint data of the left/right hand/foot to create a threshold. If the derived condition is satisfied, the count label would increase by one.</p>
+<p>In order to explore the pattern of jumping jacks, a video of a professional coach doing jumping jacks is fed into the ARKit framework. As a simple start, 6 kinds of data are chosen where LHX means &ldquo;Left-Hand joint data on X-axis&rdquo; etc. From the data, it can be concluded that a jumping jack has a certain pattern and the absolute value of two hands are almost identical in the same direction. If the minimum of RHY and LHY are regarded as a beginning of jumping jacks, the next appearance of minimum roughly stands for the ending of jumping jacks. In this way, the algorithm detects the minimum and maximum, combines the joint data of the left/right hand on X-axis and Y-axis to create a threshold. If the derived condition is satisfied, lead to a valid count of exercise the count label would increase by one. The above solution can recognize the same exercise at varying pace.</p>
 <p><img src="../img/JumpingJacksData.png" alt="jumpingJacksData">
 <em>jumpingJacksData</em></p>
 <p>The time and count would be frozen when the pause button is pressed and would be unfrozen when the resume button is pressed. The stop button would save and upload this training record into the cloud database and then return to the Workout Page. Below is the screenshot of the Jumping Jacks Detection Page.</p>
 <p><img src="../img/JumpingJacksScreenshot.png" alt="JumpingJacksScreenshot">
 <em>JumpingJacksScreenshot</em></p>
-<p>Read next: <a href="/~msp19047/jumping-jacks">Jumping Jacks Detection</a>.</p>
+<p>One of the unique features of ARCoach is instant fitness instructions. When to raise a hint and what the content of a hint becoming an important issue during the exercise time. The basic idea is to detect the beginning of jumping jacks, the timer starts the count down. If certain interval elapses and there is no sign of iconic extremum, it means that the arms are not qualified in the height standards, the hint logically should be &ldquo;raise arms higher&rdquo; then restart the count down timer.</p>
+<p><img src="../img/Hint.png" alt="Hint">
+<em>Hint</em></p>
+<p>Read next: <a href="/~msp19047/squats">Squats Detection</a>.</p>
 
 </article>
 
